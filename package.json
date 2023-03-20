@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "scripts": {
+        "html": "html-minifier --collapse-whitespace --remove-comments --output dist/main.html src/main.html",
+        "css": "csso src/css/main.css --output dist/main.css",
+        "start": "npm run html && npm run css"
+    },
+    "dependencies": {
+        "csso-cli": "^4.0.2",
+        "html-minifier": "^4.0.0"
+    }
+}
