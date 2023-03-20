@@ -25,19 +25,9 @@ const popupLinks = document.querySelectorAll('.popup__link');
 const body = document.querySelector('body');
 const lockPadding = document.querySelectorAll('.lock__padding');
 const popup = document.querySelector('.popup');
-
 let unlock = true;
 
 const timeOut = 800;
-
-document.addEventListener("click", close);
-function close(event){
-    if(event.target.closest('.close-popup')){
-        const popupActive = document.querySelector('.popup.open');
-        popupClose(popupActive);
-    }
-}
-// Проверка на существование объекта
 if(popupLinks.length > 0){
     for(let index = 0; index < popupLinks.length; index++){
         const popupLink = popupLinks[index];
@@ -49,6 +39,18 @@ if(popupLinks.length > 0){
         });
     }
 }
+
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+if (popupCloseIcon.length > 0){
+    for (let index = 0; index < popupCloseIcon.length; index++ ){
+        const el = popupCloseIcon[index];
+        el.addEventListener('click', function (e){
+            popupClose(el.closest('.popup'));
+            e.preventDefault();
+        })
+    }
+} 
+
 
 function popupOpen(curentPopup){
     if(curentPopup && unlock){
@@ -77,7 +79,7 @@ function popupClose(popupActive, doUnlock = true){
 }
 
 function bodyLock() {
-    const lockPaddingValue = window.innerWidth - document.querySelector('.page').offsetWidth + 'px';
+    const lockPaddingValue = window.innerWidth - document.querySelectorAll('.page').offsetWidth + 'px';
     if(lockPadding.length > 0){
         for(let index = 0; index < lockPadding.length; index++){
             const el = lockPadding[index];
@@ -103,7 +105,7 @@ function bodyUnLock() {
         body.style.paddingRight = '0px';
         body.classList.remove('lock');
     }, timeOut);
-
+    
     unlock = false;
     setTimeout(function(){
         unlock = true;

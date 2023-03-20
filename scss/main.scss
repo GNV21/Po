@@ -397,7 +397,7 @@ html{
     z-index: 5;
     opacity: 0;
     visibility: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     transition: all 0.8s ease 0s;
     &.open{
@@ -407,7 +407,6 @@ html{
     &.open &__content{
         transform: perspective(500px) translate(0px, 0) rotateX(0);
         opacity: 1;
-        overflow-y: hidden;
     }
     &__area{
         position: absolute;
@@ -437,6 +436,7 @@ html{
     }
 
     &__close{
+        display: block;
         position: absolute;
         right: 10px;
         top: 10px;
@@ -464,22 +464,28 @@ html{
         padding: 10px 10px;
         display: flex;
         justify-content: center;
-        width: 60%;
+        width: 80%;
         margin: 0 auto 30px;
         cursor: pointer;
     }
     @media (max-width: 480px){
         &__title{
             margin-top: 30px;
+            font-size: 20px;
         }
     }
 }
-.video iframe{
-    max-width: 560px;
-    max-height: 315px;
-    margin: 40px auto;
+.iframe__container{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
 }
-
+.iframe__container iframe {
+    width: 100%;
+    height: auto;
+}
 .input{
     &__name{
         display: block;
@@ -491,7 +497,7 @@ html{
         font-weight: 500;
         font-size: 18px;
         color: #000000;
-        width: 60%;
+        width: 80%;
     }
     &__tel{
         display: block;
@@ -503,7 +509,7 @@ html{
         font-weight: 500;
         font-size: 18px;
         color: #000000;
-        width: 60%;
+        width: 80%;
     }
     &__name:focus{
         outline: none;
