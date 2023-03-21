@@ -1077,8 +1077,11 @@ html {
   opacity: 0.8;
 }
 .reviews__btn span {
-  font-size: 50px;
-  margin: 0 0 0 19px;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
 }
 .reviews__btn:hover {
   opacity: 1;
