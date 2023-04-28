@@ -346,18 +346,20 @@ html{
         display: flex;
         justify-content: space-between;
         padding: 0 10px 5px; 
-        margin-top: 10px;
+        margin-bottom: 3px;
         
     }
 
     &__button {
-        padding: 1px;
+        padding: 0 10px;
         border-radius: 20px;
         cursor: pointer;
+        margin-bottom: 10px;
     }
     &__more{
         display: flex;
         align-items: center;
+        margin-bottom: 5px;
     }
     &__more a{
         display: block;
@@ -443,6 +445,8 @@ html{
         text-decoration: none;
         font-size: 30px;
         color: #000000;
+        border: 0;
+        background-color: white;
     }
     &__close:hover{
         color: red;
@@ -1101,13 +1105,13 @@ html{
         cursor: pointer;
         margin: 50% auto 0;
         opacity: 0.8;
-    }
-    &__btn span{
-        font-size: 48px;
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding-left: 10px;
+    }
+    &__btn span{
+        font-size: 45px;
+        margin: auto;
+        margin-left: 20%;
     }
     &__btn:hover{
         opacity: 1;
