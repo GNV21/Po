@@ -73,7 +73,7 @@ html{
         height: 70px;
         &__menu{
         position: fixed;
-        top: -100%;
+        top: -120%;
         left: 0;
         height: 250px;
         width: 100%;
@@ -148,6 +148,7 @@ html{
 .banner{
     background-image: url(./../imag/main_carousel/carousel-v-17.jpg); 
     background-size: cover;
+    object-fit: contain;
     position: relative;
     &__inner{      
         margin-top: 70px;
@@ -447,6 +448,7 @@ html{
         color: #000000;
         border: 0;
         background-color: white;
+        border-radius: 60%;
     }
     &__close:hover{
         color: red;
@@ -479,16 +481,19 @@ html{
         }
     }
 }
-.iframe__container{
+.iframe__container {
     position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
+    padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
     height: 0;
     overflow: hidden;
 }
 .iframe__container iframe {
-    width: 100%;
-    height: auto;
+    position: absolute;
+    margin: 80px 10% 20px;
+    width: 80%;
+    height: 60%;
+    border-width: 0;
+    outline-width: 0;
 }
 .input{
     &__name{
@@ -639,8 +644,8 @@ html{
     &__custom-radio-btn::before {
         content: '';
         display: inline-block;
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
         background: #000000;
         border-radius: 50%;
         position: absolute;
@@ -1096,25 +1101,32 @@ html{
         padding-left: 20px;
         padding-top: 20px;
     }
-    &__btn{
-        background-color: #fff;
-        border-radius: 50%;
-        color: #FF0000;
+    &__play {
         height: 70px;
         width: 70px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
-        margin: 50% auto 0;
+        margin: 40% auto 0;
         opacity: 0.8;
         display: flex;
         justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease;
+        background-color: #fff;
     }
-    &__btn span{
-        font-size: 45px;
-        margin: auto;
-        margin-left: 20%;
-    }
-    &__btn:hover{
+    &__play:hover {
         opacity: 1;
+    }
+    &__triangle {
+        margin-right: -7px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 0 20px 35px;
+        border-color: transparent transparent transparent #FF0000;
     }
     @media(max-width: 1024px) {
         &__title{
@@ -1324,6 +1336,9 @@ html{
         font-size: 26px;
         font-weight: 600;
         cursor: pointer;
+    }
+    &__item a:hover{
+        color: #FF0000;
     }
     &__item_line a{
         text-decoration:underline;
