@@ -482,20 +482,20 @@ html {
   }
 }
 
-.iframe__container {
-  position: relative;
-  padding-bottom: 56.25%; /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
-  height: 0;
-  overflow: hidden;
+.video-content {
+  background-color: #fefefe;
+  margin: auto; /* Выравниваем контент по центру */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
 }
 
-.iframe__container iframe {
-  position: absolute;
-  margin: 80px 10% 20px;
-  width: 80%;
-  height: 60%;
-  border-width: 0;
-  outline-width: 0;
+.video {
+  display: block; /* Видео по умолчанию скрыто */
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto; /* Выравниваем по центру */
 }
 
 .input__name {
