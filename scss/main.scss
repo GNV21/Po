@@ -150,6 +150,7 @@ html{
     background-size: cover;
     object-fit: contain;
     position: relative;
+    height: 100vh;
     &__inner{      
         margin-top: 70px;
         display: flex;
@@ -198,7 +199,6 @@ html{
     }
     @media(max-width: 1024px) {
         &__body{
-            margin: 170px 0;
         }
         &__title{
             font-size: 32px;
@@ -550,28 +550,11 @@ html{
     &__body {        
         background-color:#FFBFBF;
         border: 2.5px solid black;
+        padding: 20px;
         border-radius: 20px;
-        max-width: 570px;
-        height: 100%;
-        margin: 0 auto 40px;
+        min-width: 40%;
+        margin: 0 20px 40px auto;
         overflow: hidden;
-    }
-    &__buttons{
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-        padding: 0 10px;
-    }
-    &-button-next,
-    &-button-prev{
-        padding: 3px 10px;
-        color: #ffffff;
-        font-size: 20px;
-    }   
-    &-pagination{
-        margin: 10px 40% 15px 40%;
-        font-size: 20px;
-        color: #ffffff;
     }
     @media (max-width: 1024px){
         &__inner{
@@ -580,6 +563,10 @@ html{
         }
         &__desc{
             margin-bottom: 40px;
+        }
+        &__body{
+            width: 80%;
+            margin: 0 auto 40px;
         }
         &__title{
             font-size: 22px;
@@ -596,7 +583,7 @@ html{
     @media(max-width: 600px) {
         &__body{
             max-width: 100%;
-            margin: 0 10px 40px;
+            margin: 0 auto 40px auto;
         }
         &-pagination{
             margin: 10px 30% 15px 30%;
@@ -607,9 +594,13 @@ html{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    height: 350px;
+    margin: auto 20px;
     &__wrapper {
     }
     &__slide {
+        display: flex;
+        flex-direction: column;
     }
     &__title {
         padding: 30px;
@@ -629,6 +620,9 @@ html{
         margin-top: 10px;
         font-size: 20px;
         font-weight: 600;
+    }
+    &__form-group:last-child{
+        margin-bottom: 30px;
     }
     &__custom-radio-btn {
         position: relative; 
@@ -679,7 +673,7 @@ html{
     &__button{
         display: flex;
         justify-content: center;
-        width: 50%;
+        width: 70%;
         margin: 40px auto;
         background-color: #ffffff;
         border: 1px solid #ffffff;
@@ -688,15 +682,22 @@ html{
     @media(max-width: 600px) {
         &__title {
             padding: 15px;
+            font-size: 18px;
         }
         &__slide-title{
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 600;
             text-align: center;
             margin: 20px 0 20px;
         }
         &__input_1{
             margin-left: 20px;
+        }
+        &__form-group{
+            margin-left: -10px;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 600;
         }
     }
 }
@@ -757,7 +758,7 @@ html{
     }
     &__button {
         text-align: center;
-        margin: 20px 10%;
+        margin: 20px auto;
     }
     @media(max-width: 768px){
         &__items{
@@ -772,7 +773,7 @@ html{
         }
         &__button{
             display: block;
-            margin: 20px 10%; 
+            margin: 20px auto; 
         }
     }
 }

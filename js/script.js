@@ -123,69 +123,32 @@ document.addEventListener("keydown", function(event){
 //=======================================================================================
 
 // Инициализируем swiper 
-new Swiper('.quiz-slider',{
-    navigation: {
-        nextEl: '.quiz-button-next',
-        prevEl: '.quiz-button-prev'
-    },  
-    pagination: {
-        el: '.quiz-pagination',
-        // Фракция
-        type: 'fraction',
-        // Кастомный вывод фракции
-        renderFraction: function(currentClass, totalClass){
-            return 'Вопрос <span class="' + currentClass + '"></span>' +
-            ' из ' +
-            '<span class="' + totalClass + '"></span>';
-        },
-    },
-    // Перетаскивания на пк
-    simulateTouch: true,
-    // Чувствительность свайпа
-    touchRatio: 0,
-    // Угол срабатывания свайпа/перетаскивания
-    touchAngle: 45,
-    // Курсор перетаскивания
-    grabCursor: true,
-    // Переключение при клике на слайд
-    slideToClickedSlide: true,
-    // Навигация по хешу
-    hashNavigation: {
-        // Отслеживать состояние
-        watchStte: true,
-    },
-    // Управление клавиатурой 
-    keyboard: {
-        // Включить/выключить
-        enabled: true,
-        // Включить/выключить только когда слайдер в пределах вьюпорта
-        onlyViewport: true,
-         // Включить/выключить управления клавишами
-         // pageUp, pageDown
-        pageUpDown: true, 
-    },
-    // Автовысота
-    autoHeight: false,
-    // Количество слайдов для показа
-    slidesPerView: 1,
-    // Отключение функционала если слайдов меньше чем нужно
-    watchOverflow: true,
-    // Отступ между слайдами
-    spaceBetween: 0,
-    // Количество пролистываемых слайдов
-    slidesPerGroup: 1,
-    // Активный слайд по центру
-    centeredSlides: false,
-    // Стартовый слайд
-    initialSlide: 0,
-    // Бесконечный слайдер
-    loop: false,
-    // Кол-во дублируемых слайдов
-    loopedSlides: 0,
-    // Свободный режим
-    freeMode: true,
-
-}),
+let slideIndex = 0;
+const slides = document.getElementsByClassName("quiz-slider__slide");
+const btn1 = document.querySelectorAll("#btn1");
+const btn2 = document.getElementById("btn2");
+const btn3 = document.querySelectorAll("#btn3");
+const btn4 = document.getElementById("btn4");
+const btn5 = document.getElementById("btn5");
+for (let i = 0; i < btn1.length; i++) {
+  // проходим циклом по всем элементам объекта
+  btn1[i].addEventListener("click", () => showSlide(1));
+}
+for (let i = 0; i < btn3.length; i++) {
+  // проходим циклом по всем элементам объекта
+  btn3[i].addEventListener("click", () => showSlide(3));
+}
+btn2.addEventListener("click", () => showSlide(2));
+btn4.addEventListener("click", () => showSlide(4));
+btn5.addEventListener("click", () => showSlide(0));
+function showSlide(n) {
+  slideIndex = (n + slides.length) % slides.length;
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex].style.display = "block";
+}
+showSlide(slideIndex);
 
 // Инициализируем swiper 
 new Swiper('.team-slider',{
